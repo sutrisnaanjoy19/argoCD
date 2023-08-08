@@ -12,7 +12,8 @@ spec:
       maxUnavailable: 2
       steps:
         - setWeight: 10
-        - pause: {}
+        - pause: 
+            duration: 10s
   replicas: 10
   template:
     metadata:
