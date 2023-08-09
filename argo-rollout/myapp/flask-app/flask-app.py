@@ -5,9 +5,9 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def say_hello():
-    return jsonify({"msg": "ARGOCD testing flask app vesion **3**"})
+    return jsonify({"msg": "ARGOCD testing flask app vesion **2**"})
 
 
 if __name__ == "__main__":
     # Please do not set debug=True in production
-    app.run(host="0.0.0.0", port=8080, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
