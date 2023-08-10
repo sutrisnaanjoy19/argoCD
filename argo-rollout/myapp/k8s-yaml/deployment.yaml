@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: anjoysutrisna/flaskapp:1.0
+        image: anjoysutrisna/flaskapp:1.2
         ports:
         - containerPort: 5000
         livenessProbe:
