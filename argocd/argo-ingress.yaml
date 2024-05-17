@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd-server-ingress
+  namespace: argocd
+  annotations:
+    kubernetes.io/ingress.class: "misc-nginx"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "300"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "300"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "300"
+    #nginx.ingress.kubernetes.io/cors-allow-origin: "https://argocd.use1-poc-gke.srv.media.net, http://argocd.use1-poc-gke.srv.media.net"
+spec:
+  rules:
+  - host: argocd.use1-poc-gke.srv.media.net
+    http:
+      paths:
+      - path: /
+        pathType:  ImplementationSpecific
+        backend:
+          service:
+            name: argocd-server
+            port:
+              name: https

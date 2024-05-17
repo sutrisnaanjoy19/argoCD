@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: argo-workflow-sso
+  namespace: argo-workflows
+type: Opaque
+data:
+  client_id: #create a crd
+  client_secret: #create a crd

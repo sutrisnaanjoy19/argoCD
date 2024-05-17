@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: gcr.io/cm-java-300806/cm/cm-java/apps/test
+  name: testargo-2048
+  namespace: argocd
+spec:
+  destination:
+    namespace: test
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    kustomize:
+      images:
+      - gcr.io/cm-java-300806/cm/cm-java/apps/test:1.0.4
+    path: 2048/use1-poc
+    repoURL: http://tree.mn/sutrishna.a1/argocd.git
+    targetRevision: HEAD
