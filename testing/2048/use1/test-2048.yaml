@@ -46,7 +46,7 @@ metadata:
   namespace: test
 spec:
   rules:
-    - host: testargo-2048.use1-poc-gke.srv.media.net
+    - host: testargo-2048.test.cluster.local
       http:
         paths:
           - path: /

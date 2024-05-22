@@ -11,16 +11,15 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-connect-timeout: "300"
     nginx.ingress.kubernetes.io/proxy-read-timeout: "300"
     nginx.ingress.kubernetes.io/proxy-send-timeout: "300"
-    #nginx.ingress.kubernetes.io/cors-allow-origin: "https://argocd.use1-poc-gke.srv.media.net, http://argocd.use1-poc-gke.srv.media.net"
 spec:
   rules:
-  - host: argocd.use1-poc-gke.srv.media.net
-    http:
-      paths:
-      - path: /
-        pathType:  ImplementationSpecific
-        backend:
-          service:
-            name: argocd-server
-            port:
-              name: https
+    - host: argocd.argocd.cluster.local
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: argocd-server
+                port:
+                  name: https

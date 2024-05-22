@@ -12,7 +12,7 @@ spec:
   project: sample-project
   source:
     path: 2048/
-    repoURL: http://tree.mn/sutrishna.a1/argocd.git
+    repoURL: https://github.com/sutrisnaanjoy19/argoCD.git
     targetRevision: HEAD
   syncPolicy:
     syncOptions:

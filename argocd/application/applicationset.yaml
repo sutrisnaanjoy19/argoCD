@@ -6,9 +6,9 @@ spec:
   generators:
     - list:
         elements:
-          - cluster: use1-poc
+          - cluster: [CLUSTER_1]
             url: "https://kubernetes.default.svc"
-          - cluster: use1
+          - cluster: [CLUSTER_2]
             url: "https://35.237.57.179"
   template:
     metadata:
@@ -18,7 +18,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: http://tree.mn/sutrishna.a1/argocd.git
+        repoURL: https://github.com/sutrisnaanjoy19/argoCD.git
         targetRevision: HEAD
         path: 2048/{{cluster}}
       destination:

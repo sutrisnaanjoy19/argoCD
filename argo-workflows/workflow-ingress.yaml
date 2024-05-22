@@ -9,13 +9,13 @@ metadata:
     nginx.ingress.kubernetes.io/backend-protocol: HTTPS
 spec:
   rules:
-  - host: argocd-workflows.use1-poc-gke.srv.media.net
-    http:
-      paths:
-      - path: /
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: argo-server
-            port:
-              number: 2746
+    - host: argocd-workflows.argocd.cluster.local
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: argo-server
+                port:
+                  number: 2746
