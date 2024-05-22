@@ -4,17 +4,17 @@ metadata:
   name: applicationset-test
 spec:
   generators:
-  - list:
-      elements:
-      - cluster: use1-poc
-        url: "https://kubernetes.default.svc"
-      - cluster: use1
-        url: "https://35.237.57.179"
+    - list:
+        elements:
+          - cluster: use1-poc
+            url: "https://kubernetes.default.svc"
+          - cluster: use1
+            url: "https://35.237.57.179"
   template:
     metadata:
-      name: '{{cluster}}-2048'
-      annotations: 
-        argocd-image-updater.argoproj.io/image-list: gcr.io/cm-java-300806/cmjava-artifact-repo/apps/test
+      name: "{{cluster}}-2048"
+      annotations:
+        argocd-image-updater.argoproj.io/image-list: anjoysutrisna/test-argo-2048
     spec:
       project: default
       source:
@@ -22,5 +22,5 @@ spec:
         targetRevision: HEAD
         path: 2048/{{cluster}}
       destination:
-        server: '{{url}}'
+        server: "{{url}}"
         namespace: test

@@ -20,8 +20,8 @@ data:
   registries.conf: |
     registries:
     - name: Google Container Registry
-      api_url: https://gcr.io
-      prefix: gcr.io
+      api_url: https://docker.io
+      prefix: docker.io
       ping: no
       default: true
-      credentials: pullsecret:argocd-image-updater/argocd-gcr-secret
+      credentials: pullsecret:argocd-image-updater/argocd-docker-secret

@@ -4,7 +4,7 @@ metadata:
   name: sealed-secrets
   namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/image-list: gcr.io/cm-java-300806/cmjava-artifact-repo/apps/test:1.0.1
+    argocd-image-updater.argoproj.io/image-list: anjoysutrisna/test-argo-2048:1.0.0
 spec:
   project: default
   source:

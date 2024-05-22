@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
-    argocd-image-updater.argoproj.io/image-list: gcr.io/cm-java-300806/cm/cm-java/apps/test
+    argocd-image-updater.argoproj.io/image-list: anjoysutrisna/test-argo-2048:1.0.0
   name: testargo-2048
   namespace: argocd
 spec:
@@ -13,7 +13,7 @@ spec:
   source:
     kustomize:
       images:
-      - gcr.io/cm-java-300806/cm/cm-java/apps/test:1.0.4
+        - anjoysutrisna/test-argo-2048:1.0.0
     path: 2048/use1-poc
     repoURL: http://tree.mn/sutrishna.a1/argocd.git
     targetRevision: HEAD
