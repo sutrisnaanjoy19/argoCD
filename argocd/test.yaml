@@ -4,7 +4,7 @@ metadata:
   name: sample-app
   namespace: default
   annotations:
-    argocd-image-updater.argoproj.io/image-list: gcr.io/cm-java-300806/cm/cm-java/apps/test 
+    argocd-image-updater.argoproj.io/image-list: anjoysutrisna/test-argo-2048:1.0.0
 spec:
   destination:
     namespace: test
@@ -16,7 +16,7 @@ spec:
     targetRevision: HEAD
   syncPolicy:
     syncOptions:
-    - CreateNamespace=true
+      - CreateNamespace=true
     automated:
       selfHeal: true
       prune: true

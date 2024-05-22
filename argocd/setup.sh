@@ -4,7 +4,7 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 kubectl port-forward svc/argocd-server -n argocd 9000:80
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 kubectl apply -f argo/argo-ingress.yaml -n argocd
-argocd login argocd.use1-poc-gke.srv.media.net:443 --grpc-web
+argocd login YOUR_ARGOCD_INGRESS_URL:443 --grpc-web
 argocd cluster add <CONTEXT_NAME>
 
 #create a new user
